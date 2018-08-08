@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCardDemo", "DynamicCardDemo.csproj", "{A1BF50D3-15F2-480C-9296-A97B76E77BAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1BF50D3-15F2-480C-9296-A97B76E77BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BF50D3-15F2-480C-9296-A97B76E77BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BF50D3-15F2-480C-9296-A97B76E77BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BF50D3-15F2-480C-9296-A97B76E77BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9808D9B-77CB-46DE-B306-D7AB72ABB9DA}
+	EndGlobalSection
+EndGlobal
