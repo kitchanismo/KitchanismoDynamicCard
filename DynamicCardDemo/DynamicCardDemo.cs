@@ -1,5 +1,5 @@
 ﻿// Kitchanismo Dynamic Card
-// Version 2.0.1
+// Version 2.5.1
 // Created by Kitchan Betsayda
 // CardContainer Properties
 
@@ -26,14 +26,28 @@ namespace DynamicCardDemo
         
         private void InitializeCard()
         {
-            cardContainer1.OnCount += HandlerCount;
+            cardContainer1.OnCounted += HandlerCount;
+            cardContainer1.OnLoaded += HandlerLoad;
         }
         
-        private void HandlerCount(object sender, EventArgs e)
+        private void HandlerCount(object sender, CardArgs args)
         {
             DisplayCart();
+            DisplayDetails(args);
             LblTotalQty.Text = Card.TotalQuantity.ToString();
-            LblTotal.Text    = Card.Total.ToString();
+            LblTotal.Text = Card.Total.ToString();
+        }
+
+        private void HandlerLoad(object sender, CardArgs args)
+        {
+            LblTotalCards.Text = args.TotalCards.ToString();
+        }
+
+        private void DisplayDetails(CardArgs args)
+        {
+            TxtTitle.Text = args.Title;
+            TxtPrice.Text = args.Price.ToString("N");
+            TxtImagePath.Text = args.ImagePath;
         }
 
         private void DisplayCart()
@@ -49,36 +63,60 @@ namespace DynamicCardDemo
             }
         }
         
-        private void Form2_Load(object sender, EventArgs e)
+        private async void Form2_Load(object sender, EventArgs e)
         {
-            cardContainer1.AddRange(GetCards());
+            await cardContainer1.AddRangeAsync(GetCards());
         }
-      
+
+       
+        // test 100 data for responsiveness of async 
         private static IEnumerable<CardArgs> GetCards()
         {
             var cards = new List<CardArgs>();
 
-            var products = ProductRepository.GetAll();
+            var products = new Array[100];
 
             foreach (var product in products)
             {
                 cards.Add(new CardArgs
                 {
-                    Key = product.Id.ToString(),
-                    Title = product.Title,
-                    Price = product.Price,
-                    ImagePath = product.ImageSource
+                    Key = Guid.NewGuid().ToString(),
+                    Title = Guid.NewGuid().ToString(),
+                    Price = 10,
+                    ImagePath = null,
                 });
             }
             return cards;
         }
+
+        //actual items in repository
+        //private static IEnumerable<CardArgs> GetCards()
+        //{
+        //    var cards = new List<CardArgs>();
+
+        //    var appPath = Application.StartupPath + @"\img\";
+
+        //    var products = ProductRepository.GetAll();
+
+        //    foreach (var product in products)
+        //    {
+        //        cards.Add(new CardArgs
+        //        {
+        //            Key = product.Id.ToString(),
+        //            Title = product.Title,
+        //            Price = product.Price,
+        //            ImagePath = appPath + product.ImageSource,
+        //        });
+        //    }
+        //    return cards;
+        //}
 
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (TxtTitle.Text == "" || TxtPrice.Text == "" || TxtImagePath.Text == "") return;
          
-            if (cardContainer1.Add(GetCard()) != null)
+            if (cardContainer1.AddAsync(GetCard()) != null)
             {
                 MessageBox.Show("Added");
                 EmptyField();
@@ -89,11 +127,29 @@ namespace DynamicCardDemo
         {
             return new CardArgs
             {
-                Key = new Random().Next(100, 5000).ToString(),
+                Key = Guid.NewGuid().ToString(),
                 Title = TxtTitle.Text,
                 Price = double.Parse((TxtPrice.Text == "") ? "0" : TxtPrice.Text),
                 ImagePath = TxtImagePath.Text
             };
+        }
+        
+        private async void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+           await cardContainer1.Load(TxtSearch.Text); 
+        }
+        
+        private async void BtnReset_Click(object sender, EventArgs e)
+        {
+            cardContainer1.Reset();
+            await cardContainer1.AddRangeAsync(GetCards());
+            Clear();
+        }
+
+        private void Clear()
+        {
+            LvCart.Items.Clear();
+            EmptyField();
         }
 
         private void EmptyField()
@@ -101,58 +157,44 @@ namespace DynamicCardDemo
             TxtTitle.Text = "";
             TxtPrice.Text = "";
             TxtImagePath.Text = "";
+            LblTotalQty.Text = "";
+            LblTotal.Text = "";
         }
 
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        private async void BtnRefresh_Click(object sender, EventArgs e)
         {
-            cardContainer1.Load(TxtSearch.Text); 
-        }
-        
-        private void BtnReset_Click(object sender, EventArgs e)
-        {
-            Clear();
-            cardContainer1.Reset();
-            cardContainer1.AddRange(GetCards());
-        }
-
-        private void Clear()
-        {
-            LvCart.Items.Clear();
-            LblTotalQty.Text = "0";
-            LblTotal.Text = "0";
-            EmptyField();
-        }
-
-        private void BtnRefresh_Click(object sender, EventArgs e)
-        {
-            cardContainer1.Load();
+            await cardContainer1.Load();
             TxtSearch.Text = "";
         }
 
-        private void CboOrder_SelectedIndexChanged(object sender, EventArgs e)
+        private async void CboOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cardContainer1.OrderBy = (CboOrder.Text == "DES") ? cardContainer1.OrderBy = OrderBy.DESCENDING : OrderBy.ASCENDING;
-            cardContainer1.Load();
+            cardContainer1.OrderBy = (CboOrder.Text == "DES") 
+                ? cardContainer1.OrderBy = OrderBy.DESCENDING 
+                : OrderBy.ASCENDING;
+            await cardContainer1.Load();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cardContainer1.Theme = (CboTheme.Text == "Dark") ? Card.CardTheme.Dark : Card.CardTheme.Light;
-            cardContainer1.Load();
+            cardContainer1.Theme = (CboTheme.Text == "Dark") 
+                ? Card.CardTheme.Dark 
+                : Card.CardTheme.Light;
+            await cardContainer1.Load();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
             cardContainer1.Primary = colorDialog1.Color;
-            cardContainer1.Load();
+            await cardContainer1.Load();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private async void button1_Click_1(object sender, EventArgs e)
         {
             colorDialog2.ShowDialog();
             cardContainer1.Secondary = colorDialog2.Color;
-            cardContainer1.Load();
+            await cardContainer1.Load();
         }
     }
     

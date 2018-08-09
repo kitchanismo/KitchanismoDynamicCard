@@ -55,6 +55,8 @@ namespace DynamicCardDemo
             this.BtnPrimary = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.LblTotalCards = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.cardContainer1 = new DynamicCard.CardContainer();
             this.SuspendLayout();
             // 
@@ -80,7 +82,7 @@ namespace DynamicCardDemo
             this.LvCart.GridLines = true;
             this.LvCart.Location = new System.Drawing.Point(798, 58);
             this.LvCart.Name = "LvCart";
-            this.LvCart.Size = new System.Drawing.Size(255, 251);
+            this.LvCart.Size = new System.Drawing.Size(255, 291);
             this.LvCart.TabIndex = 3;
             this.LvCart.UseCompatibleStateImageBehavior = false;
             this.LvCart.View = System.Windows.Forms.View.Details;
@@ -110,7 +112,7 @@ namespace DynamicCardDemo
             this.BtnReset.BackColor = System.Drawing.Color.White;
             this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReset.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(955, 322);
+            this.BtnReset.Location = new System.Drawing.Point(955, 368);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(97, 33);
             this.BtnReset.TabIndex = 6;
@@ -143,7 +145,7 @@ namespace DynamicCardDemo
             this.BtnRefresh.BackColor = System.Drawing.Color.White;
             this.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRefresh.Location = new System.Drawing.Point(797, 322);
+            this.BtnRefresh.Location = new System.Drawing.Point(797, 368);
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.Size = new System.Drawing.Size(97, 33);
             this.BtnRefresh.TabIndex = 10;
@@ -175,7 +177,7 @@ namespace DynamicCardDemo
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(796, 377);
+            this.label3.Location = new System.Drawing.Point(796, 409);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 22);
             this.label3.TabIndex = 13;
@@ -184,7 +186,7 @@ namespace DynamicCardDemo
             // TxtTitle
             // 
             this.TxtTitle.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTitle.Location = new System.Drawing.Point(797, 402);
+            this.TxtTitle.Location = new System.Drawing.Point(797, 434);
             this.TxtTitle.Name = "TxtTitle";
             this.TxtTitle.Size = new System.Drawing.Size(255, 33);
             this.TxtTitle.TabIndex = 15;
@@ -193,7 +195,7 @@ namespace DynamicCardDemo
             // TxtPrice
             // 
             this.TxtPrice.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrice.Location = new System.Drawing.Point(797, 481);
+            this.TxtPrice.Location = new System.Drawing.Point(797, 494);
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(255, 33);
             this.TxtPrice.TabIndex = 16;
@@ -212,7 +214,7 @@ namespace DynamicCardDemo
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(793, 456);
+            this.label4.Location = new System.Drawing.Point(793, 469);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 22);
             this.label4.TabIndex = 18;
@@ -262,7 +264,7 @@ namespace DynamicCardDemo
             this.CboTheme.Items.AddRange(new object[] {
             "Light",
             "Dark"});
-            this.CboTheme.Location = new System.Drawing.Point(513, 603);
+            this.CboTheme.Location = new System.Drawing.Point(643, 600);
             this.CboTheme.Name = "CboTheme";
             this.CboTheme.Size = new System.Drawing.Size(131, 32);
             this.CboTheme.TabIndex = 22;
@@ -278,7 +280,7 @@ namespace DynamicCardDemo
             this.BtnPrimary.BackColor = System.Drawing.Color.White;
             this.BtnPrimary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPrimary.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrimary.Location = new System.Drawing.Point(184, 602);
+            this.BtnPrimary.Location = new System.Drawing.Point(343, 600);
             this.BtnPrimary.Name = "BtnPrimary";
             this.BtnPrimary.Size = new System.Drawing.Size(131, 33);
             this.BtnPrimary.TabIndex = 23;
@@ -291,7 +293,7 @@ namespace DynamicCardDemo
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(349, 602);
+            this.button1.Location = new System.Drawing.Point(493, 600);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 33);
             this.button1.TabIndex = 24;
@@ -302,6 +304,26 @@ namespace DynamicCardDemo
             // colorDialog2
             // 
             this.colorDialog2.Color = System.Drawing.Color.Tomato;
+            // 
+            // LblTotalCards
+            // 
+            this.LblTotalCards.AutoSize = true;
+            this.LblTotalCards.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCards.Location = new System.Drawing.Point(76, 608);
+            this.LblTotalCards.Name = "LblTotalCards";
+            this.LblTotalCards.Size = new System.Drawing.Size(21, 22);
+            this.LblTotalCards.TabIndex = 29;
+            this.LblTotalCards.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 607);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 22);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Cards:";
             // 
             // cardContainer1
             // 
@@ -322,6 +344,8 @@ namespace DynamicCardDemo
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1070, 647);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.LblTotalCards);
             this.Controls.Add(this.cardContainer1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnPrimary);
@@ -381,5 +405,7 @@ namespace DynamicCardDemo
         private System.Windows.Forms.Button button1;
         private CardContainer cardContainer1;
         private System.Windows.Forms.ColorDialog colorDialog2;
+        public System.Windows.Forms.Label LblTotalCards;
+        public System.Windows.Forms.Label label6;
     }
 }
