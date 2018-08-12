@@ -1,13 +1,13 @@
 # KitchanismoDynamicCard
 
 # Cart
-![Scheme](cart.png)
+![Scheme](cart.PNG)
 
 # Mini
-![Scheme](mini.png)
+![Scheme](mini.PNG)
 
-#Thumbnail
-![Scheme](thumb.png)
+# Thumbnail
+![Scheme](thumb.PNG)
 
 # Custom
-![Scheme](custom.png)
+![Scheme](custom.PNG)
