@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1BF50D3-15F2-480C-9296-A97B76E77BAD}</ProjectGuid>
+    <ProjectGuid>{2E457A58-47D5-4DB2-B89B-E46C2DFAA608}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DynamicCardDemo</RootNamespace>
     <AssemblyName>DynamicCardDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KitchanismoDynamicCard">
+      <HintPath>..\..\..\nuget\CryptoObfuscator_Output\DynamicCardDemo2.5.1\DynamicCardDemo3.7\KitchanismoDynamicCard.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,15 +48,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCard.Designer.cs">
+      <DependentUpon>CustomCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DynamicCardDemo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DynamicCardDemo.Designer.cs">
       <DependentUpon>DynamicCardDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomCard.resx">
+      <DependentUpon>CustomCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DynamicCardDemo.resx">
       <DependentUpon>DynamicCardDemo.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,7 +77,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,12 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DynamicCard\DynamicCard.csproj">
-      <Project>{53d4a9fa-7ad5-4071-8db7-ee0f56fd07ce}</Project>
-      <Name>DynamicCard</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
