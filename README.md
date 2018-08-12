@@ -1,7 +1,13 @@
 # KitchanismoDynamicCard
 
-# Light Theme
-![Scheme](light.png)
+# Cart
+![Scheme](cart.png)
 
-# Dark Theme
-![Scheme](dark.png)
+# Mini
+![Scheme](mini.png)
+
+#Thumbnail
+![Scheme](thumb.png)
+
+# Custom
+![Scheme](custom.png)
