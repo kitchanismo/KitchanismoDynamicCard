@@ -29,7 +29,6 @@ C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\Kitchanismo
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.exe.config
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.exe
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.pdb
-C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\bin\Debug\KitchanismoDynamicCard.dll
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.csprojAssemblyReference.cache
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.CustomCard.resources
 C:\Users\Betsayda\Desktop\git clones\KitchanismoDynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.DynamicCardDemo.resources

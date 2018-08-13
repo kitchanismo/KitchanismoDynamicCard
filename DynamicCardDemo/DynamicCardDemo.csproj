@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KitchanismoDynamicCard">
-      <HintPath>..\..\..\nuget\CryptoObfuscator_Output\DynamicCardDemo2.5.1\DynamicCardDemo3.7\KitchanismoDynamicCard.dll</HintPath>
+    <Reference Include="KitchanismoDynamicCard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KitchanismoDynamicCard.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

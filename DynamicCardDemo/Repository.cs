@@ -24,7 +24,7 @@ namespace DynamicCardDemo
                 //add more here
             };
 
-            foreach (var product in new Array[100])
+            foreach (var product in new Array[300])
             {
                 cards.Add(new CardArgs
                 {
@@ -33,7 +33,7 @@ namespace DynamicCardDemo
                     Price = 99,
                     Stock = 3,
                     Category = "Category",
-                    ImagePath = null,
+                    ImagePath = _path + "hero.jpeg",
                     Subtitle = "Your subtitle here",
                     Currency = "Php",
                     Details = details
