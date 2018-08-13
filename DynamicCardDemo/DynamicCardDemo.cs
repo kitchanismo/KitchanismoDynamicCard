@@ -1,5 +1,5 @@
 ﻿// Kitchanismo Dynamic Card
-// Version 3.0
+// Version 3.7.2
 // Created by Kitchan Betsayda
 
 // CardContainer Properties
