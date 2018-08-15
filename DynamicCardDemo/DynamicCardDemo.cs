@@ -1,5 +1,5 @@
 ﻿// Kitchanismo Dynamic Card
-// Version 3.7.2
+// Version 3.0
 // Created by Kitchan Betsayda
 
 // CardContainer Properties
@@ -108,7 +108,7 @@ namespace DynamicCardDemo
         {
             //just replace CustomCard with Card if custom is not use
             Wrapper.Enabled = false;
-            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards());
+            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards(pageNumber));
         }
         
         private async void BtnSave_Click(object sender, EventArgs e)
@@ -132,18 +132,20 @@ namespace DynamicCardDemo
             EmptyField();
         }
 
-        
+
+        private int pageNumber = 1;
+
         private async void button2_Click(object sender, EventArgs e)
         {
             Wrapper.Enabled = false;
-            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards());
+            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards(pageNumber));
             Clear();
         }
 
         private async void BtnReset_Click(object sender, EventArgs e)
         {
             Wrapper.Enabled = false;
-            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetDummyCards());
+            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetDummyCards(pageNumber));
             Clear();
         }
         
@@ -206,7 +208,7 @@ namespace DynamicCardDemo
             }
 
             cardContainer1.Style = view;
-            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards());
+            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards(pageNumber));
             Clear();
         }
 
@@ -257,8 +259,16 @@ namespace DynamicCardDemo
         {
             await cardContainer1.FilterByCategoryAsync(CboCategory.Text);
         }
-        
 
+        private async void BtnNext_Click(object sender, EventArgs e)
+        {
+            await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards(++pageNumber));
+        }
+
+        private async void BtnPrev_Click(object sender, EventArgs e)
+        {
+           await cardContainer1.AddRangeAsync<CustomCard>(Repository.GetCards(--pageNumber));
+        }
     }
 
 }

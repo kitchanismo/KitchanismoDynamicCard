@@ -1,0 +1,16 @@
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.exe.config
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.exe
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\DynamicCardDemo.pdb
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\KitchanismoDynamicCard.dll
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\Core.dll
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\KitchanismoDynamicCard.pdb
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\bin\Debug\Core.pdb
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\Dyn.csprojAssemblyReference.cache
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.CustomCard.resources
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.DynamicCardDemo.resources
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.Properties.Resources.resources
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\Dyn.csproj.GenerateResource.cache
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\Dyn.csproj.CoreCompileInputs.cache
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\Dyn.csproj.CopyComplete
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.exe
+C:\Users\Betsayda\source\repos\DynamicCard\DynamicCardDemo\obj\Debug\DynamicCardDemo.pdb

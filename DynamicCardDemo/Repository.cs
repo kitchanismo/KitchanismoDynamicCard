@@ -14,7 +14,7 @@ namespace DynamicCardDemo
         static string _path = Application.StartupPath + @"\img\";
 
         //dummy
-        public static IEnumerable<CardArgs> GetDummyCards()
+        public static IEnumerable<CardArgs> GetDummyCards(int pageNumber, int pageSize = 10)
         {
             var cards = new List<CardArgs>();
 
@@ -24,7 +24,9 @@ namespace DynamicCardDemo
                 //add more here
             };
 
-            foreach (var product in new Array[300])
+            var products = new Array[100];
+
+            foreach (var product in products)
             {
                 cards.Add(new CardArgs
                 {
@@ -43,15 +45,15 @@ namespace DynamicCardDemo
         }
 
         //actual data
-        public static IEnumerable<CardArgs> GetCards()
+        public static IEnumerable<CardArgs> GetCards(int pageNumber, int pageSize = 3)
         {
             var cards = new List<CardArgs>();
 
             var details = new Dictionary<string, object>
-        {
-            { "info", "dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy" }
-            //add more here
-        };
+            {
+                { "info", "dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy" }
+                //add more here
+            };
 
             foreach (var product in Products)
             {

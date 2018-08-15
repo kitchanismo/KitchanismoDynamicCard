@@ -17,11 +17,12 @@ namespace DynamicCardDemo
     {
         public CustomCard() // dont remove
         {
+            InitializeComponent();
         }
 
         public CustomCard(CardArgs args)
+            : this()
         {
-            InitializeComponent();
             InitializeArgs(args);
         }
 
